@@ -8,10 +8,10 @@ def auth_google():
 
 def get_sheet_data(sheet_url):
     gc = auth_google()
-    sheet = gc.open_by_url(sheet_url).sheet1
+    sheet = gc.open_by_key(sheet_url).sheet1
     return sheet.get_all_values()
 
 def update_sheet_note(sheet_url, row, col, note):
     gc = auth_google()
-    sheet = gc.open_by_url(sheet_url).sheet1
+    sheet = gc.open_by_key(sheet_url).sheet1
     sheet.update_cell(row, col, note)
